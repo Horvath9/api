@@ -1,5 +1,6 @@
 export function somar (a, b){
-    return a + b;
+    let soma = a + b;
+    return soma;
 }
 
 export function dobro (numero){
@@ -38,23 +39,21 @@ export function corPrimaria (cor) {
 }
 
 export function ingressoCinema (meia, inteira, diaSemana, nacionalidade) {
+    let inteiras = inteira * 28.5;
+    let meias = meia * 14.25;
     
-    let b = meia * 14.25;
-    let c = inteira * 28.5;
-    
-    
-    if (diaSemana == "quarta") {
-        c = inteira * 14.25;
+
+    if(diaSemana.toLowerCase() == "quarta")
+    {
+        inteiras = inteira * 14.25
     }
-
-    if (nacionalidade == "brasileiro") {
-        b = meia * 5;
-        c = inteira * 5;
+    if(nacionalidade.toLowerCase() == "brasileira")
+    {
+        inteiras = inteira * 5;
+        meias = meia * 5;
     }
-
-    let a = b + c;
-
-    return a;
+    let soma = inteiras + meias;
+    return soma;
 }
 
 export function FreqCaracter (texto, caracter){    

@@ -41,12 +41,12 @@ server.get('/somar', (req, resp) => {
 
 server.post('/somar', (req, resp) => {
     try{
-    const { valores: { a,b } } = req.body;
+    const { a,b }  = req.body;
 
-    const x = somar (a, b);
+    const soma = somar(a, b);
 
     resp.send({
-        soma: x
+        soma: soma
     })
     }
     catch (err) {
@@ -58,7 +58,7 @@ server.post('/somar', (req, resp) => {
 
 server.get('/tabuada', (req, resp) => {
     try {
-    const a = Number(req.query.n);
+    const a = Number(req.query.a);
 
     const x = tabuada(a); 
 
@@ -121,11 +121,11 @@ server.get('/dia2/corprimaria/:cor', (req, resp) =>{
 
 server.post('/dia2/ingressocinema', (req,resp) =>{
     try{
-        const {info: {inteira, meia, diaSemana, nacionalidade}} = req.body;
+        const {qtdInteira, qtdMeia, diaSemana, nacionalidade} = req.body;
         
-        const x = ingressoCinema(inteira, meia, diaSemana, nacionalidade);
+        const total = ingressoCinema(qtdInteira, qtdMeia, diaSemana, nacionalidade);
         resp.send({
-            valor: x
+            total : total
         })
     }
     catch(err){
@@ -158,12 +158,12 @@ server.get('/dia2/freqcaracter/:texto/:caracter', (req, resp) => {
 
 server.post('/dia2/maiornumero', (req, resp) => {
     try{
-    const a = req.body.array;
+    const a = req.body;
 
-    const x = maiorNumero(a);
+    const maior = maiorNumero(a);
 
     resp.send({
-        maior: x
+        maior: maior
     })
     } catch(err) {
         resp.send({
